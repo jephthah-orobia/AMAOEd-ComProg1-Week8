@@ -1,7 +1,7 @@
 /* ****************************************************************
  * @author: JEPHTHAH M. OROBIA
  * @app name: AMAOEd ITE7101 Computer Progamming - Week8 - Lab7
- * @app desc: This console app will display 5 numbers user inputs.
+ * @app desc: This console app will display a triangle.
  * ****************************************************************/
 
 #include <iostream>
@@ -16,7 +16,8 @@ int main()
   int h, row = 0;
   char rowLabels[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
-  cout << "Let's make a triangle\nHow tall do you want it? [1-10 integers only]: ";
+  cout << "Let's make a triangle" << endl
+       <<"How tall do you want it? [1-10 integers only]: ";
 
   while (true)
   {
