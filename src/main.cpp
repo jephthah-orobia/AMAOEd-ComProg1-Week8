@@ -12,10 +12,10 @@ using namespace std;
 
 int main()
 {
-  // The task requires to use only 2 variables.
-  int n[5], i = 0;
+  // The task requires to use only 4 variables: n, temp, i, j.
+  int n[6];
 
-  while (i < 5)
+  for (int i = 0; i < 6; i++)
   {
     while (true)
     {
@@ -33,17 +33,34 @@ int main()
       }
       cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
-    i++;
   }
-  
-  i=0; // reset loop counter
-  cout << endl << "The entered numbers are: ";
 
-  while(i < 5){
+  for (int i = 0; i < 6; i++)
+  {
+    for (int j = i; j < 6; j++)
+    {
+      if (n[i] > n[j])
+      {
+        int temp = n[i];
+        n[i] = n[j];
+        n[j] = temp;
+      }
+    }
+  }
+
+  cout << endl << "The numbers you entered in ascending order: ";
+
+  for (int i = 0; i < 6; i++)
+  {
     cout << n[i];
-    if(i < 4) cout << ", ";
-    else cout << "." << endl << endl;
-    i++;
+    if (i + 1 < 6)
+    {
+      cout << ", ";
+    }
+    else
+    {
+      cout << ". " << endl;
+    }
   }
 
   return whatsNext({
