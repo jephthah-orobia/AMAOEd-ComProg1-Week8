@@ -12,39 +12,55 @@ using namespace std;
 
 int main()
 {
-  // The task requires to use only 2 variables.
-  int n[5], i = 0;
+  // The task requires to use only 4 variables: h, row, rowLabels, col
+  int h, row = 0;
+  char rowLabels[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
-  while (i < 5)
+  cout << "Let's make a triangle\nHow tall do you want it? [1-10 integers only]: ";
+
+  while (true)
   {
-    while (true)
+    cin >> noskipws >> h;
+    if (!cin.fail() && h >= 1 && h <= 10)
     {
-      cout << "Enter number[" << i + 1 << "]: ";
-      cin >> n[i];
-      if (!cin.fail()) // validation
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      break;
+    }
+    else
+    {
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      cout << endl
+           << "Invalid height. Try again [1-10 integers only]: ";
+    }
+  }
+
+  while (row < h)
+  {
+    int col = 0;
+    cout << rowLabels[row] << " "; // disp
+    while (col < 2 * h - 1)
+    {
+      if (
+          col == h - row - 1    // left side of the triangle
+          || col == h + row - 1// right side of the triangle
+          || (row == h - 1
+              && col % 2 == 0)  // base of the triangle
+      )
       {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        break;
+
+        cout << "*";
       }
       else
       {
-        cin.clear();
-        cout << "Invalid number, try again." << endl;
+        cout << " ";
       }
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      col++;
     }
-    i++;
+    cout << endl;
+    row++;
   }
-  
-  i=0; // reset loop counter
-  cout << endl << "The entered numbers are: ";
 
-  while(i < 5){
-    cout << n[i];
-    if(i < 4) cout << ", ";
-    else cout << "." << endl << endl;
-    i++;
-  }
 
   return whatsNext({
       {'r', make_tuple("Re-Run App",
