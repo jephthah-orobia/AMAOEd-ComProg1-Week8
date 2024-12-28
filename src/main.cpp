@@ -4,7 +4,6 @@
  * @app desc: This console app will display 6 numbers
  *            sorted in ascending order from user inputs.
  * ****************************************************************/
-
 #include <iostream>
 #include <limits>
 #include "whatsNext.h"
