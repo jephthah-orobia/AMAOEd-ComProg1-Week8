@@ -1,7 +1,8 @@
 /* ****************************************************************
  * @author: JEPHTHAH M. OROBIA
  * @app name: AMAOEd ITE7101 Computer Progamming - Week8 - Lab7
- * @app desc: This console app will display 5 numbers user inputs.
+ * @app desc: This console app will display 6 numbers
+ *            sorted in ascending order from user inputs.
  * ****************************************************************/
 
 #include <iostream>
